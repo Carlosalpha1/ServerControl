@@ -25,7 +25,7 @@ from PySide6.QtCore import (
     QTimer,
     Signal,
 )
-from PySide6.QtGui import QColor, QCursor
+from PySide6.QtGui import QColor, QCursor, QIcon
 from PySide6.QtWidgets import (
     QAbstractItemView,
     QApplication,
@@ -62,7 +62,7 @@ from ui_theme import STYLE
 
 DATA = config_directory()
 LOG = logging.getLogger("servercontrol.app")
-VERSION = "1.1.0"
+VERSION = "1.0.0"
 
 
 def button(text, fn, kind=""):
@@ -2176,6 +2176,9 @@ def main():
     application.setApplicationName("ServerControl")
     application.setStyle("Fusion")
     application.setStyleSheet(STYLE)
+
+    icon_path = Path(__file__).resolve().parent / "servercontrol.ico"
+    application.setWindowIcon(QIcon(str(icon_path)))
 
     window = Window(args.demo)
     window.show()

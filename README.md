@@ -16,7 +16,7 @@ En **Linux**:
 ~~~bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt pyinstaller
-sh launch.sh --demo
+.venv/bin/python app.py --demo
 ~~~
 
 ### Generación del ejecutable
